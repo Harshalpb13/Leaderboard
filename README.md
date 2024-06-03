@@ -11,7 +11,7 @@ This is a RESTful API service developed using Spring Boot to manage the leaderbo
 - [Endpoints](#endpoints)
 - [Error Handling](#error-handling)
 - [Testing](#testing)
-- [Contributing](#contributing)
+
 
 ## Technologies Used
 
@@ -59,7 +59,7 @@ Ensure you have the following installed on your machine:
    ```
 
 5. **Accessing the Application**:
-   The application will be accessible at 'http://localhost:8083/coderhack'.
+   The application will be accessible at 'http://localhost:8083/User'.
 
 ## Endpoints
 
@@ -70,14 +70,17 @@ The application provides the following endpoints:
 - 'POST /users: Register': a new user to the contest..
 - POST /users: Register a new user to the contest.
       Request Body:
-      json
+  ```bash
       {
         "userId": "string",
         "username": "string"
       }
-- 'PUT User/{userId}?newScore=integer': Update the score of a specific user.
-     Request Parameters:
-       newScore: integer
+   ```
+      json
+      
+- 'PUT User/{userId}?newScore=integer' : Update the score of a specific user.
+       Request Parameters:
+          newScore: integer
 - 'DELETE /users/{userId}': Deregister a specific user from the contest.
 
 
@@ -85,24 +88,19 @@ The application provides the following endpoints:
 
 The API uses custom exceptions to handle various error scenarios. Here are some common error responses:
 
-1  404 Not Found: User not found.
-2  409 Conflict: User already exists.
-3  500 Internal Server Error: General server error.
+1.  **404 Not Found**:
+       User not found.
+2.  **409 Conflict**:
+       User already exists.
+3.  **500 Internal Server Error**:
+       General server error.
 
 ## Testing
 
 You can test the application using tools like Postman or by writing JUnit test cases. Postman collections are available in the repository for easier testing.
 
-1 **Postman**:
+1. **Postman**:
   Import the Postman collection from the repository to test the endpoints.
-2 **JUnit**:
+2. **JUnit**:
 Run ./gradlew test to execute the unit tests.
 
-##Contributing
-We welcome contributions! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Make your changes and commit them with clear and concise messages.
-4. Push your changes to your fork.
-5. Open a pull request to the main repository.
